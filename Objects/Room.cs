@@ -27,7 +27,7 @@ public class Room
     {
         if(this.hasExit(direction))
         {
-            //remove the player from the current room
+            this.thePlayer = null;
             //place them in the destination room in that direction
             //update the room the player is currently in so the room exits visually update
         }
