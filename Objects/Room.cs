@@ -30,7 +30,7 @@ public class Room
             this.thePlayer = null;
             this.thePlayer.setPlayer;
             Room temp = this.thePlayer.getCurrentRoom();
-            temp.addExit(direction, this.availableExits[i].
+            temp.addExit(direction, this.availableExits[i].getDestination());
         }
         else
         {
