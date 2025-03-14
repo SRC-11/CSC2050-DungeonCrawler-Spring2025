@@ -29,7 +29,8 @@ public class Room
         {
             this.thePlayer = null;
             this.thePlayer.setPlayer;
-            Room temp = this.thePlayer.get
+            Room temp = this.thePlayer.getCurrentRoom();
+            temp.addExit(direction, 
         }
         else
         {
