@@ -29,7 +29,7 @@ public class Room
         {
             this.thePlayer = null;
             this.thePlayer.setPlayer;
-            //update the room the player is currently in so the room exits visually update
+            Room temp = this.thePlayer.get
         }
         else
         {
