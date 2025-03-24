@@ -19,5 +19,8 @@ public class Player : Inhabitant
     {
         this.currentRoom = r;
     }
-    
+       public String getName()
+    {
+        return this.name;
+    }
 }
