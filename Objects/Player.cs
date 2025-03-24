@@ -20,5 +20,8 @@ public class Player : Inhabitant
     {
         this.currentRoom = r;
     }
-   
+       public int getCurrHP()
+    {
+        return this.currHp;
+    }
 }
