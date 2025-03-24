@@ -35,7 +35,7 @@ public class Fight
 		    
 		
 		     int d4 = Random.Range(0, 15) + 1;
-			if(attackRoll >= currentDefender.getAC())
+			if(attackRoll >= currentDefender.getHP())
 			{
 		
 				int damage = d4;
