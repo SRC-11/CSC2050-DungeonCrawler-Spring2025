@@ -4,6 +4,7 @@ public class Player : Inhabitant
 {
 
     private Room currentRoom;
+    protected int HP = Random.Range(0, 32) + 1;
 
     public Player(string name) : base(name)
     {
@@ -22,5 +23,9 @@ public class Player : Inhabitant
        public String getName()
     {
         return this.name;
+    }
+    public void getHP()
+    {
+        return this.HP;
     }
 }
