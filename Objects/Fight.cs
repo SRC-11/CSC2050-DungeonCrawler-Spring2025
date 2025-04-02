@@ -121,4 +121,12 @@ public class Fight
             this.defender = temp;
         }
     }
+    public void pickAction(Input.GetKeyDown)
+    {
+      if (this.attacker.getName() == player.getName())
+      {
+       if (Input.GetKeyDown(KeyCode.LeftArrow))
+       {
+           this.attacker.takeASwing(GameObject thePlayer, GameObject theMonster);
+       }
 }
