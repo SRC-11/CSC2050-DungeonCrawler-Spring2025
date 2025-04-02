@@ -42,10 +42,62 @@ public class Fight
         Debug.Log("Attack Roll: " + attackRoll);
         Debug.Log("Defender AC: " + this.defender.getAC());
         
-        if(attackRoll >= this.defender.getAC())
+        if(attackRoll >= this.defender.getAC() * 1.25)
+        {
+          
+            int damage = Random.Range(1, 6); //1 to 5 damage
+            this.defender.takeDamage(damage);
+
+            if(this.defender.isDead())
+            {
+                this.fightOver = true;
+                Debug.Log(this.attacker.getName() + " killed " + this.defender.getName());
+                if(this.defender is Player)
+                {
+                    //player died
+                    Debug.Log("Player died");
+                    //end the game
+                    playerGameObject.SetActive(false); //hide the player
+                }
+                else
+                {
+                    //monster died
+                    Debug.Log("Monster died");
+                    //remove the monster from the scene
+                    GameObject.Destroy(monsterGameObject); //remove the monster from the scene
+                }
+            }
+        }
+        else
+        {
+            Debug.Log(this.attacker.getName() + " missed " + this.defender.getName());
+        }
+
+        Inhabitant temp = this.attacker;
+        this.attacker = this.defender;
+        this.defender = temp;
+    }
+    public void drinkPotion(GameObject playerGameObject)
+    {
+        Debug.Log("You drank a potion. 25% HP restored");
+        this.attacker.getCurrHp;
+        this.attacker.getMaxHp;
+        this.attacker.currHp = this.attacker.currHp + (this.attacker.maxHp * 0.25);
+        if (this.attacker.currHp >= this.attacker.maxHp)
+        {
+           this.attacker.currHp = this.attacker.maxHp;
+        }
+    }
+    public void strongAttack (GameObject playerGameObject)
+    {
+         int attackRoll = Random.Range(0, 20) + 1;
+        Debug.Log("Attack Roll: " + attackRoll);
+        Debug.Log("Defender AC: " + this.defender.getAC());
+        
+        if(attackRoll >= (this.defender.getAC() * 1.25));
         {
             //attacker hits the defender
-            int damage = Random.Range(1, 6); //1 to 5 damage
+            int damage = Random.Range((1, 6) * 1.5);
             this.defender.takeDamage(damage);
 
             if(this.defender.isDead())
@@ -121,12 +173,19 @@ public class Fight
             this.defender = temp;
         }
     }
-    public void pickAction(Input.GetKeyDown)
-    {
+   
       if (this.attacker.getName() == player.getName())
       {
        if (Input.GetKeyDown(KeyCode.LeftArrow))
        {
-           this.attacker.takeASwing(GameObject thePlayer, GameObject theMonster);
+           this.attacker.takeASwing(Player thePlayer, Monster m);
        }
+          if (Input.GetKeyDown(KeyCode.DownArrow))
+          {
+             this.attacker.drinkPotion(Player thePlayer);
+              }
+          if (Input.GetKeyDown(KeyCode.RightArrow))
+          {
+               this.attacker.strongAttack(Player thePlayer);
+          }
 }
